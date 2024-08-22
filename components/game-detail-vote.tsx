@@ -44,13 +44,13 @@ const fetchTokenPrice = async (tokenAddress: string): Promise<number | null> => 
 };
 
 export function GameDetailVote() {
-  const WNW_PRECOMPILE_ADDRESS = '0x358686178A7F2A87c9CAeE638d8c3DB0e199b5Ef';
+  const WNW_PRECOMPILE_ADDRESS = '0x06C84985Dbaa92D59C04a8BA289247B3e7f161e2';
   const searchParams = useSearchParams();
   const key = searchParams.get('key');
   const [startPrice, setStartPrice] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState<number | null>(null);
-  const [betUp, setBetUp] = useState<boolean | null>(null); // Up/Down 선택 상태
-  const [amount, setAmount] = useState(''); // Input 필드에 입력된 숫자
+  const [betUp, setBetUp] = useState<boolean | null>(null); 
+  const [amount, setAmount] = useState(''); 
 
   const { data: game }: any = useReadContract({
     address: WNW_PRECOMPILE_ADDRESS,
@@ -84,7 +84,7 @@ export function GameDetailVote() {
     console.log('betAmount : ', betAmount);
 
     writeContract({
-      WNW_ABI,
+      abi : WNW_ABI,
       address: WNW_PRECOMPILE_ADDRESS,
       functionName: 'bet',
       args: [

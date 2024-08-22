@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import Link from 'next/link';
 
-const WNW_PRECOMPILE_ADDRESS = '0x358686178A7F2A87c9CAeE638d8c3DB0e199b5Ef';
+const WNW_PRECOMPILE_ADDRESS = '0x06C84985Dbaa92D59C04a8BA289247B3e7f161e2';
 export const GameList = () => {
   const { data: allGames }: any = useReadContract({
     address: WNW_PRECOMPILE_ADDRESS,
